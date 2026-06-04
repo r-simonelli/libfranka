@@ -1,0 +1,921 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" data-theme="dark">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>API Overview &#8212; pylibfranka 0.21.2 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "dark";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "dark";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=0790524f97105ba85085" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=0790524f97105ba85085" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="_static/graphviz.css?v=4ae1632d" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="_static/scripts/fontawesome.js?digest=0790524f97105ba85085"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=0790524f97105ba85085" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=0790524f97105ba85085" />
+
+    <script src="_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'api_overview';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Class List" href="class_list.html" />
+    <link rel="prev" title="pylibfranka Documentation" href="index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.21.2" />
+  
+    
+    <script src="_static/searchtools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="dark">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">pylibfranka v0.21.2</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="#">
+    API Overview
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="class_list.html">
+    Class List
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="class_hierarchy.html">
+    Class Hierarchy
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="modules.html">
+    Module Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="api/robot.html">
+    Robot
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="api/control.html">
+    Control Interface
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="api/model.html">
+    Dynamics Model
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="api/gripper.html">
+    Gripper
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="api/state.html">
+    Robot State
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="api/exceptions.html">
+    Exceptions
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/frankarobotics/libfranka" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+      
+        <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="#">
+    API Overview
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="class_list.html">
+    Class List
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="class_hierarchy.html">
+    Class Hierarchy
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="modules.html">
+    Module Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="api/robot.html">
+    Robot
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="api/control.html">
+    Control Interface
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="api/model.html">
+    Dynamics Model
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="api/gripper.html">
+    Gripper
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="api/state.html">
+    Robot State
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="api/exceptions.html">
+    Exceptions
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/frankarobotics/libfranka" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+        
+          <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item pst-sidebar-collapse"><button id="pst-collapse-sidebar-button" aria-expanded="true" aria-controls="pst-primary-sidebar"><svg class="pst-icon svg-inline--fa" role="img" aria-hidden="true" focusable="false" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+    <path fill="currentColor" d="M3 15.5C2.36232 15.5 1.74874 15.2564 1.28478 14.8189C0.820828 14.3815 0.541576 13.7832 0.504167 13.1467L0.5 13L0.5 3C0.499965 2.36232 0.743605 1.74874 1.18107 1.28478C1.61854 0.820828 2.21676 0.541576 2.85333 0.504167L3 0.5L13 0.5C13.6377 0.499965 14.2513 0.743605 14.7152 1.18107C15.1792 1.61854 15.4584 2.21676 15.4958 2.85333L15.5 3L15.5 13C15.5 13.6377 15.2564 14.2513 14.8189 14.7152C14.3815 15.1792 13.7832 15.4584 13.1467 15.4958L13 15.5L3 15.5ZM3 13.8333L10.5 13.8333L10.5 2.16667L3 2.16667C2.79589 2.16669 2.59889 2.24163 2.44636 2.37726C2.29383 2.5129 2.19638 2.69979 2.1725 2.9025L2.16667 3L2.16667 13C2.16669 13.2041 2.24163 13.4011 2.37726 13.5536C2.5129 13.7062 2.69979 13.8036 2.9025 13.8275L3 13.8333ZM6.65583 10.325L6.5775 10.2558L4.91083 8.58917C4.76735 8.44567 4.68116 8.25476 4.66843 8.05223C4.65569 7.84971 4.71729 7.6495 4.84167 7.48917L4.91083 7.41083L6.5775 5.74417C6.72747 5.59471 6.9287 5.50794 7.14032 5.50148C7.35194 5.49502 7.55809 5.56935 7.7169 5.70937C7.8757 5.8494 7.97525 6.04463 7.99533 6.25539C8.01541 6.46616 7.95451 6.67667 7.825 6.84417L7.75583 6.9225L6.67917 8L7.75583 9.0775C7.89931 9.22099 7.98551 9.41191 7.99824 9.61443C8.01097 9.81695 7.94938 10.0172 7.825 10.1775L7.75583 10.2558C7.61234 10.3993 7.42142 10.4855 7.2189 10.4982C7.01638 10.511 6.81617 10.4494 6.65583 10.325Z"/>
+  </svg>
+  <span class="pst-collapse-sidebar-label">Collapse Sidebar</span>
+  <span class="pst-expand-sidebar-label">Expand Sidebar</span>
+</button></div>
+        <div class="sidebar-primary-item">
+
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"></div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">API Overview</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="api-overview">
+<h1>API Overview<a class="headerlink" href="#api-overview" title="Link to this heading">#</a></h1>
+<p>This page provides a complete overview of all classes, types, and functions in pylibfranka.</p>
+<section id="complete-class-reference">
+<h2>Complete Class Reference<a class="headerlink" href="#complete-class-reference" title="Link to this heading">#</a></h2>
+<section id="control-and-robot-classes">
+<h3>Control and Robot Classes<a class="headerlink" href="#control-and-robot-classes" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<colgroup>
+<col style="width: 5.0%" />
+<col style="width: 30.0%" />
+<col style="width: 65.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Type</p></th>
+<th class="head"><p>Name</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>C</strong></p></td>
+<td><p><a class="reference internal" href="api/control.html#pylibfranka.ActiveControlBase" title="pylibfranka.ActiveControlBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">ActiveControlBase</span></code></a></p></td>
+<td><p>Allows the user to read the state of a Robot and to send new control commands after starting a control process of a Robot</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>C</strong></p></td>
+<td><p><a class="reference internal" href="api/model.html#pylibfranka.Model" title="pylibfranka.Model"><code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></a></p></td>
+<td><p>Calculates poses of joints and dynamic properties of the robot</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>C</strong></p></td>
+<td><p><a class="reference internal" href="api/robot.html#pylibfranka.Robot" title="pylibfranka.Robot"><code class="xref py py-class docutils literal notranslate"><span class="pre">Robot</span></code></a></p></td>
+<td><p>Maintains a network connection to the robot, provides the current robot state, gives access to the model library and allows to control the robot</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="gripper-classes">
+<h3>Gripper Classes<a class="headerlink" href="#gripper-classes" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<colgroup>
+<col style="width: 5.0%" />
+<col style="width: 30.0%" />
+<col style="width: 65.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Type</p></th>
+<th class="head"><p>Name</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>C</strong></p></td>
+<td><p><a class="reference internal" href="api/gripper.html#pylibfranka.Gripper" title="pylibfranka.Gripper"><code class="xref py py-class docutils literal notranslate"><span class="pre">Gripper</span></code></a></p></td>
+<td><p>Maintains a network connection to the gripper, provides the current gripper state, and allows the execution of commands</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>C</strong></p></td>
+<td><p><a class="reference internal" href="api/gripper.html#pylibfranka.GripperState" title="pylibfranka.GripperState"><code class="xref py py-class docutils literal notranslate"><span class="pre">GripperState</span></code></a></p></td>
+<td><p>Describes the gripper state</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="state-and-error-classes">
+<h3>State and Error Classes<a class="headerlink" href="#state-and-error-classes" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<colgroup>
+<col style="width: 5.0%" />
+<col style="width: 30.0%" />
+<col style="width: 65.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Type</p></th>
+<th class="head"><p>Name</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>C</strong></p></td>
+<td><p><a class="reference internal" href="api/state.html#pylibfranka.Errors" title="pylibfranka.Errors"><code class="xref py py-class docutils literal notranslate"><span class="pre">Errors</span></code></a></p></td>
+<td><p>Enumerates errors that can occur while controlling a Robot</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>C</strong></p></td>
+<td><p><a class="reference internal" href="api/state.html#pylibfranka.RobotState" title="pylibfranka.RobotState"><code class="xref py py-class docutils literal notranslate"><span class="pre">RobotState</span></code></a></p></td>
+<td><p>Describes the robot state including joint positions, velocities, torques, and transformation matrices</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="motion-command-types">
+<h3>Motion Command Types<a class="headerlink" href="#motion-command-types" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<colgroup>
+<col style="width: 5.0%" />
+<col style="width: 30.0%" />
+<col style="width: 65.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Type</p></th>
+<th class="head"><p>Name</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>C</strong></p></td>
+<td><p><a class="reference internal" href="api/control.html#pylibfranka.CartesianPose" title="pylibfranka.CartesianPose"><code class="xref py py-class docutils literal notranslate"><span class="pre">CartesianPose</span></code></a></p></td>
+<td><p>Stores values for Cartesian pose motion generation</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>C</strong></p></td>
+<td><p><a class="reference internal" href="api/control.html#pylibfranka.CartesianVelocities" title="pylibfranka.CartesianVelocities"><code class="xref py py-class docutils literal notranslate"><span class="pre">CartesianVelocities</span></code></a></p></td>
+<td><p>Stores values for Cartesian velocity motion generation</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>C</strong></p></td>
+<td><p><a class="reference internal" href="api/control.html#pylibfranka.JointPositions" title="pylibfranka.JointPositions"><code class="xref py py-class docutils literal notranslate"><span class="pre">JointPositions</span></code></a></p></td>
+<td><p>Stores values for joint position motion generation</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>C</strong></p></td>
+<td><p><a class="reference internal" href="api/control.html#pylibfranka.JointVelocities" title="pylibfranka.JointVelocities"><code class="xref py py-class docutils literal notranslate"><span class="pre">JointVelocities</span></code></a></p></td>
+<td><p>Stores values for joint velocity motion generation</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>C</strong></p></td>
+<td><p><a class="reference internal" href="api/control.html#pylibfranka.Torques" title="pylibfranka.Torques"><code class="xref py py-class docutils literal notranslate"><span class="pre">Torques</span></code></a></p></td>
+<td><p>Stores values for torque control</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="enumeration-types">
+<h3>Enumeration Types<a class="headerlink" href="#enumeration-types" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<colgroup>
+<col style="width: 5.0%" />
+<col style="width: 30.0%" />
+<col style="width: 65.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Type</p></th>
+<th class="head"><p>Name</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>E</strong></p></td>
+<td><p><a class="reference internal" href="api/robot.html#pylibfranka.ControllerMode" title="pylibfranka.ControllerMode"><code class="xref py py-class docutils literal notranslate"><span class="pre">ControllerMode</span></code></a></p></td>
+<td><p>Enumeration for controller mode selection (JointImpedance, CartesianImpedance)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>E</strong></p></td>
+<td><p><a class="reference internal" href="api/robot.html#pylibfranka.RealtimeConfig" title="pylibfranka.RealtimeConfig"><code class="xref py py-class docutils literal notranslate"><span class="pre">RealtimeConfig</span></code></a></p></td>
+<td><p>Enumeration for real-time scheduling requirements (kEnforce, kIgnore)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>E</strong></p></td>
+<td><p><a class="reference internal" href="api/state.html#pylibfranka.RobotMode" title="pylibfranka.RobotMode"><code class="xref py py-class docutils literal notranslate"><span class="pre">RobotMode</span></code></a></p></td>
+<td><p>Enumerates different robot operation modes</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="utility-types">
+<h3>Utility Types<a class="headerlink" href="#utility-types" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<colgroup>
+<col style="width: 5.0%" />
+<col style="width: 30.0%" />
+<col style="width: 65.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Type</p></th>
+<th class="head"><p>Name</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>C</strong></p></td>
+<td><p><a class="reference internal" href="api/state.html#pylibfranka.Duration" title="pylibfranka.Duration"><code class="xref py py-class docutils literal notranslate"><span class="pre">Duration</span></code></a></p></td>
+<td><p>Represents a duration with millisecond resolution</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="exception-classes">
+<h3>Exception Classes<a class="headerlink" href="#exception-classes" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<colgroup>
+<col style="width: 5.0%" />
+<col style="width: 30.0%" />
+<col style="width: 65.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Type</p></th>
+<th class="head"><p>Name</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>C</strong></p></td>
+<td><p><a class="reference internal" href="api/exceptions.html#pylibfranka.CommandException" title="pylibfranka.CommandException"><code class="xref py py-class docutils literal notranslate"><span class="pre">CommandException</span></code></a></p></td>
+<td><p>Thrown if an error occurs during command execution</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>C</strong></p></td>
+<td><p><a class="reference internal" href="api/exceptions.html#pylibfranka.ControlException" title="pylibfranka.ControlException"><code class="xref py py-class docutils literal notranslate"><span class="pre">ControlException</span></code></a></p></td>
+<td><p>Thrown if an error occurs during motion generation or torque control</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>C</strong></p></td>
+<td><p><a class="reference internal" href="api/exceptions.html#pylibfranka.FrankaException" title="pylibfranka.FrankaException"><code class="xref py py-class docutils literal notranslate"><span class="pre">FrankaException</span></code></a></p></td>
+<td><p>Base class for all exceptions used by libfranka</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>C</strong></p></td>
+<td><p><a class="reference internal" href="api/exceptions.html#pylibfranka.InvalidOperationException" title="pylibfranka.InvalidOperationException"><code class="xref py py-class docutils literal notranslate"><span class="pre">InvalidOperationException</span></code></a></p></td>
+<td><p>Thrown if an operation cannot be performed</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>C</strong></p></td>
+<td><p><a class="reference internal" href="api/exceptions.html#pylibfranka.NetworkException" title="pylibfranka.NetworkException"><code class="xref py py-class docutils literal notranslate"><span class="pre">NetworkException</span></code></a></p></td>
+<td><p>Thrown if a connection to the robot cannot be established, or when a timeout occurs</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>C</strong></p></td>
+<td><p><a class="reference internal" href="api/exceptions.html#pylibfranka.RealtimeException" title="pylibfranka.RealtimeException"><code class="xref py py-class docutils literal notranslate"><span class="pre">RealtimeException</span></code></a></p></td>
+<td><p>Thrown if real-time scheduling requirements cannot be met</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+<section id="legend">
+<h2>Legend<a class="headerlink" href="#legend" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>C</strong> = Class/Type</p></li>
+<li><p><strong>E</strong> = Enumeration</p></li>
+</ul>
+</section>
+<section id="quick-links-by-category">
+<h2>Quick Links by Category<a class="headerlink" href="#quick-links-by-category" title="Link to this heading">#</a></h2>
+<section id="robot-control">
+<h3>Robot Control<a class="headerlink" href="#robot-control" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><a class="reference internal" href="api/robot.html#pylibfranka.Robot" title="pylibfranka.Robot"><code class="xref py py-class docutils literal notranslate"><span class="pre">Robot</span></code></a> - Main robot interface</p></li>
+<li><p><a class="reference internal" href="api/control.html#pylibfranka.ActiveControlBase" title="pylibfranka.ActiveControlBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">ActiveControlBase</span></code></a> - Active control loop interface</p></li>
+<li><p><a class="reference internal" href="api/model.html#pylibfranka.Model" title="pylibfranka.Model"><code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></a> - Dynamics computations</p></li>
+</ul>
+</section>
+<section id="gripper-control">
+<h3>Gripper Control<a class="headerlink" href="#gripper-control" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><a class="reference internal" href="api/gripper.html#pylibfranka.Gripper" title="pylibfranka.Gripper"><code class="xref py py-class docutils literal notranslate"><span class="pre">Gripper</span></code></a> - Gripper interface</p></li>
+<li><p><a class="reference internal" href="api/gripper.html#pylibfranka.GripperState" title="pylibfranka.GripperState"><code class="xref py py-class docutils literal notranslate"><span class="pre">GripperState</span></code></a> - Gripper state</p></li>
+</ul>
+</section>
+<section id="state-access">
+<h3>State Access<a class="headerlink" href="#state-access" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><a class="reference internal" href="api/state.html#pylibfranka.RobotState" title="pylibfranka.RobotState"><code class="xref py py-class docutils literal notranslate"><span class="pre">RobotState</span></code></a> - Complete robot state</p></li>
+<li><p><a class="reference internal" href="api/state.html#pylibfranka.RobotMode" title="pylibfranka.RobotMode"><code class="xref py py-class docutils literal notranslate"><span class="pre">RobotMode</span></code></a> - Robot operation mode</p></li>
+<li><p><a class="reference internal" href="api/state.html#pylibfranka.Errors" title="pylibfranka.Errors"><code class="xref py py-class docutils literal notranslate"><span class="pre">Errors</span></code></a> - Error flags</p></li>
+</ul>
+</section>
+<section id="motion-commands">
+<h3>Motion Commands<a class="headerlink" href="#motion-commands" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><a class="reference internal" href="api/control.html#pylibfranka.Torques" title="pylibfranka.Torques"><code class="xref py py-class docutils literal notranslate"><span class="pre">Torques</span></code></a> - Torque commands</p></li>
+<li><p><a class="reference internal" href="api/control.html#pylibfranka.JointPositions" title="pylibfranka.JointPositions"><code class="xref py py-class docutils literal notranslate"><span class="pre">JointPositions</span></code></a> - Joint position commands</p></li>
+<li><p><a class="reference internal" href="api/control.html#pylibfranka.JointVelocities" title="pylibfranka.JointVelocities"><code class="xref py py-class docutils literal notranslate"><span class="pre">JointVelocities</span></code></a> - Joint velocity commands</p></li>
+<li><p><a class="reference internal" href="api/control.html#pylibfranka.CartesianPose" title="pylibfranka.CartesianPose"><code class="xref py py-class docutils literal notranslate"><span class="pre">CartesianPose</span></code></a> - Cartesian pose commands</p></li>
+<li><p><a class="reference internal" href="api/control.html#pylibfranka.CartesianVelocities" title="pylibfranka.CartesianVelocities"><code class="xref py py-class docutils literal notranslate"><span class="pre">CartesianVelocities</span></code></a> - Cartesian velocity commands</p></li>
+</ul>
+</section>
+<section id="error-handling">
+<h3>Error Handling<a class="headerlink" href="#error-handling" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><a class="reference internal" href="api/exceptions.html#pylibfranka.FrankaException" title="pylibfranka.FrankaException"><code class="xref py py-class docutils literal notranslate"><span class="pre">FrankaException</span></code></a> - Base exception</p></li>
+<li><p><a class="reference internal" href="api/exceptions.html#pylibfranka.CommandException" title="pylibfranka.CommandException"><code class="xref py py-class docutils literal notranslate"><span class="pre">CommandException</span></code></a> - Command errors</p></li>
+<li><p><a class="reference internal" href="api/exceptions.html#pylibfranka.ControlException" title="pylibfranka.ControlException"><code class="xref py py-class docutils literal notranslate"><span class="pre">ControlException</span></code></a> - Control errors</p></li>
+<li><p><a class="reference internal" href="api/exceptions.html#pylibfranka.NetworkException" title="pylibfranka.NetworkException"><code class="xref py py-class docutils literal notranslate"><span class="pre">NetworkException</span></code></a> - Network errors</p></li>
+<li><p><a class="reference internal" href="api/exceptions.html#pylibfranka.InvalidOperationException" title="pylibfranka.InvalidOperationException"><code class="xref py py-class docutils literal notranslate"><span class="pre">InvalidOperationException</span></code></a> - Invalid operations</p></li>
+<li><p><a class="reference internal" href="api/exceptions.html#pylibfranka.RealtimeException" title="pylibfranka.RealtimeException"><code class="xref py py-class docutils literal notranslate"><span class="pre">RealtimeException</span></code></a> - Real-time errors</p></li>
+</ul>
+</section>
+<section id="configuration">
+<h3>Configuration<a class="headerlink" href="#configuration" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><a class="reference internal" href="api/robot.html#pylibfranka.RealtimeConfig" title="pylibfranka.RealtimeConfig"><code class="xref py py-class docutils literal notranslate"><span class="pre">RealtimeConfig</span></code></a> - Real-time enforcement</p></li>
+<li><p><a class="reference internal" href="api/robot.html#pylibfranka.ControllerMode" title="pylibfranka.ControllerMode"><code class="xref py py-class docutils literal notranslate"><span class="pre">ControllerMode</span></code></a> - Controller selection</p></li>
+<li><p><a class="reference internal" href="api/state.html#pylibfranka.Duration" title="pylibfranka.Duration"><code class="xref py py-class docutils literal notranslate"><span class="pre">Duration</span></code></a> - Time representation</p></li>
+</ul>
+</section>
+</section>
+<section id="see-also">
+<h2>See Also<a class="headerlink" href="#see-also" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="class_hierarchy.html"><span class="doc">Class Hierarchy</span></a> - View inheritance relationships</p></li>
+<li><p><a class="reference internal" href="modules.html"><span class="doc">Module Reference</span></a> - Browse by module organization</p></li>
+<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a> - Alphabetical index</p></li>
+</ul>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">pylibfranka Documentation</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="class_list.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Class List</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#complete-class-reference">Complete Class Reference</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#control-and-robot-classes">Control and Robot Classes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gripper-classes">Gripper Classes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#state-and-error-classes">State and Error Classes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#motion-command-types">Motion Command Types</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#enumeration-types">Enumeration Types</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#utility-types">Utility Types</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exception-classes">Exception Classes</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#legend">Legend</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quick-links-by-category">Quick Links by Category</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#robot-control">Robot Control</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gripper-control">Gripper Control</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#state-access">State Access</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#motion-commands">Motion Commands</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#error-handling">Error Handling</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#configuration">Configuration</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#see-also">See Also</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=0790524f97105ba85085"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=0790524f97105ba85085"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2025, Franka Robotics GmbH.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.18.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

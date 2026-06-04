@@ -1,0 +1,1338 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" data-theme="dark">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Robot &#8212; pylibfranka 0.21.2 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "dark";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "dark";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=0790524f97105ba85085" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=0790524f97105ba85085" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../_static/scripts/fontawesome.js?digest=0790524f97105ba85085"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=0790524f97105ba85085" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=0790524f97105ba85085" />
+
+    <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'api/robot';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Control Interface" href="control.html" />
+    <link rel="prev" title="Module Reference" href="../modules.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.21.2" />
+  
+    
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="dark">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">pylibfranka v0.21.2</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../api_overview.html">
+    API Overview
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../class_list.html">
+    Class List
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../class_hierarchy.html">
+    Class Hierarchy
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../modules.html">
+    Module Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="#">
+    Robot
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="control.html">
+    Control Interface
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="model.html">
+    Dynamics Model
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="gripper.html">
+    Gripper
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="state.html">
+    Robot State
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="exceptions.html">
+    Exceptions
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/frankarobotics/libfranka" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+      
+        <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../api_overview.html">
+    API Overview
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../class_list.html">
+    Class List
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../class_hierarchy.html">
+    Class Hierarchy
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../modules.html">
+    Module Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="#">
+    Robot
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="control.html">
+    Control Interface
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="model.html">
+    Dynamics Model
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="gripper.html">
+    Gripper
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="state.html">
+    Robot State
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="exceptions.html">
+    Exceptions
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/frankarobotics/libfranka" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+        
+          <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item pst-sidebar-collapse"><button id="pst-collapse-sidebar-button" aria-expanded="true" aria-controls="pst-primary-sidebar"><svg class="pst-icon svg-inline--fa" role="img" aria-hidden="true" focusable="false" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+    <path fill="currentColor" d="M3 15.5C2.36232 15.5 1.74874 15.2564 1.28478 14.8189C0.820828 14.3815 0.541576 13.7832 0.504167 13.1467L0.5 13L0.5 3C0.499965 2.36232 0.743605 1.74874 1.18107 1.28478C1.61854 0.820828 2.21676 0.541576 2.85333 0.504167L3 0.5L13 0.5C13.6377 0.499965 14.2513 0.743605 14.7152 1.18107C15.1792 1.61854 15.4584 2.21676 15.4958 2.85333L15.5 3L15.5 13C15.5 13.6377 15.2564 14.2513 14.8189 14.7152C14.3815 15.1792 13.7832 15.4584 13.1467 15.4958L13 15.5L3 15.5ZM3 13.8333L10.5 13.8333L10.5 2.16667L3 2.16667C2.79589 2.16669 2.59889 2.24163 2.44636 2.37726C2.29383 2.5129 2.19638 2.69979 2.1725 2.9025L2.16667 3L2.16667 13C2.16669 13.2041 2.24163 13.4011 2.37726 13.5536C2.5129 13.7062 2.69979 13.8036 2.9025 13.8275L3 13.8333ZM6.65583 10.325L6.5775 10.2558L4.91083 8.58917C4.76735 8.44567 4.68116 8.25476 4.66843 8.05223C4.65569 7.84971 4.71729 7.6495 4.84167 7.48917L4.91083 7.41083L6.5775 5.74417C6.72747 5.59471 6.9287 5.50794 7.14032 5.50148C7.35194 5.49502 7.55809 5.56935 7.7169 5.70937C7.8757 5.8494 7.97525 6.04463 7.99533 6.25539C8.01541 6.46616 7.95451 6.67667 7.825 6.84417L7.75583 6.9225L6.67917 8L7.75583 9.0775C7.89931 9.22099 7.98551 9.41191 7.99824 9.61443C8.01097 9.81695 7.94938 10.0172 7.825 10.1775L7.75583 10.2558C7.61234 10.3993 7.42142 10.4855 7.2189 10.4982C7.01638 10.511 6.81617 10.4494 6.65583 10.325Z"/>
+  </svg>
+  <span class="pst-collapse-sidebar-label">Collapse Sidebar</span>
+  <span class="pst-expand-sidebar-label">Expand Sidebar</span>
+</button></div>
+        <div class="sidebar-primary-item">
+
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Robot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="control.html">Control Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="model.html">Dynamics Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gripper.html">Gripper</a></li>
+<li class="toctree-l1"><a class="reference internal" href="state.html">Robot State</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exceptions.html">Exceptions</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../modules.html" class="nav-link">Module Reference</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Robot</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="robot">
+<h1>Robot<a class="headerlink" href="#robot" title="Link to this heading">#</a></h1>
+<p>The <a class="reference internal" href="#pylibfranka.Robot" title="pylibfranka.Robot"><code class="xref py py-class docutils literal notranslate"><span class="pre">Robot</span></code></a> class maintains a network connection to the robot, provides the current robot state, gives access to the model library and allows to control the robot.</p>
+<section id="class-definition">
+<h2>Class Definition<a class="headerlink" href="#class-definition" title="Link to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="pylibfranka.Robot">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pylibfranka.</span></span><span class="sig-name descname"><span class="pre">Robot</span></span><a class="headerlink" href="#pylibfranka.Robot" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pybind11_object</span></code></p>
+<p>Main interface for controlling a Franka robot.</p>
+<p>Provides real-time control capabilities including torque, position,
+and velocity control modes.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pylibfranka.Robot.automatic_error_recovery">
+<span class="sig-name descname"><span class="pre">automatic_error_recovery</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pylibfranka.Robot" title="pylibfranka._pylibfranka.Robot"><span class="pre">pylibfranka._pylibfranka.Robot</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#pylibfranka.Robot.automatic_error_recovery" title="Link to this definition">#</a></dt>
+<dd><p>Attempt automatic error recovery.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pylibfranka.Robot.load_model">
+<span class="sig-name descname"><span class="pre">load_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pylibfranka.Robot" title="pylibfranka._pylibfranka.Robot"><span class="pre">pylibfranka._pylibfranka.Robot</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="model.html#pylibfranka.Model" title="pylibfranka._pylibfranka.Model"><span class="pre">pylibfranka._pylibfranka.Model</span></a></span></span><a class="headerlink" href="#pylibfranka.Robot.load_model" title="Link to this definition">#</a></dt>
+<dd><p>Load robot dynamics model.</p>
+<p>&#64;return Model object for computing dynamics quantities</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pylibfranka.Robot.read_once">
+<span class="sig-name descname"><span class="pre">read_once</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pylibfranka.Robot" title="pylibfranka._pylibfranka.Robot"><span class="pre">pylibfranka._pylibfranka.Robot</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="state.html#pylibfranka.RobotState" title="pylibfranka._pylibfranka.RobotState"><span class="pre">pylibfranka._pylibfranka.RobotState</span></a></span></span><a class="headerlink" href="#pylibfranka.Robot.read_once" title="Link to this definition">#</a></dt>
+<dd><p>Read current robot state once.</p>
+<p>&#64;return Current robot state</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pylibfranka.Robot.set_EE">
+<span class="sig-name descname"><span class="pre">set_EE</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pylibfranka.Robot" title="pylibfranka._pylibfranka.Robot"><span class="pre">pylibfranka._pylibfranka.Robot</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Annotated" title="(in Python v3.14)"><span class="pre">Annotated</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Sequence" title="(in Python v3.14)"><span class="pre">collections.abc.Sequence</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.SupportsFloat" title="(in Python v3.14)"><span class="pre">SupportsFloat</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.SupportsIndex" title="(in Python v3.14)"><span class="pre">SupportsIndex</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'FixedSize(16)'</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#pylibfranka.Robot.set_EE" title="Link to this definition">#</a></dt>
+<dd><p>Set end effector frame relative to nominal end effector frame.</p>
+<p>&#64;param NE_T_EE Homogeneous transformation matrix (16,) in column-major order</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pylibfranka.Robot.set_K">
+<span class="sig-name descname"><span class="pre">set_K</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pylibfranka.Robot" title="pylibfranka._pylibfranka.Robot"><span class="pre">pylibfranka._pylibfranka.Robot</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Annotated" title="(in Python v3.14)"><span class="pre">Annotated</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Sequence" title="(in Python v3.14)"><span class="pre">collections.abc.Sequence</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.SupportsFloat" title="(in Python v3.14)"><span class="pre">SupportsFloat</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.SupportsIndex" title="(in Python v3.14)"><span class="pre">SupportsIndex</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'FixedSize(16)'</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#pylibfranka.Robot.set_K" title="Link to this definition">#</a></dt>
+<dd><p>Set stiffness frame K in end effector frame.</p>
+<p>&#64;param EE_T_K Homogeneous transformation matrix (16,) in column-major order</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pylibfranka.Robot.set_cartesian_impedance">
+<span class="sig-name descname"><span class="pre">set_cartesian_impedance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pylibfranka.Robot" title="pylibfranka._pylibfranka.Robot"><span class="pre">pylibfranka._pylibfranka.Robot</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Annotated" title="(in Python v3.14)"><span class="pre">Annotated</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Sequence" title="(in Python v3.14)"><span class="pre">collections.abc.Sequence</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.SupportsFloat" title="(in Python v3.14)"><span class="pre">SupportsFloat</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.SupportsIndex" title="(in Python v3.14)"><span class="pre">SupportsIndex</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'FixedSize(6)'</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#pylibfranka.Robot.set_cartesian_impedance" title="Link to this definition">#</a></dt>
+<dd><p>Set Cartesian impedance for internal controller.</p>
+<p>&#64;param K_x Cartesian stiffness values [N/m, Nm/rad] (6,)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pylibfranka.Robot.set_collision_behavior">
+<span class="sig-name descname"><span class="pre">set_collision_behavior</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pylibfranka.Robot" title="pylibfranka._pylibfranka.Robot"><span class="pre">pylibfranka._pylibfranka.Robot</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">lower_torque_thresholds</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Annotated" title="(in Python v3.14)"><span class="pre">Annotated</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Sequence" title="(in Python v3.14)"><span class="pre">collections.abc.Sequence</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.SupportsFloat" title="(in Python v3.14)"><span class="pre">SupportsFloat</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.SupportsIndex" title="(in Python v3.14)"><span class="pre">SupportsIndex</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'FixedSize(7)'</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">upper_torque_thresholds</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Annotated" title="(in Python v3.14)"><span class="pre">Annotated</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Sequence" title="(in Python v3.14)"><span class="pre">collections.abc.Sequence</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.SupportsFloat" title="(in Python v3.14)"><span class="pre">SupportsFloat</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.SupportsIndex" title="(in Python v3.14)"><span class="pre">SupportsIndex</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'FixedSize(7)'</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lower_force_thresholds</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Annotated" title="(in Python v3.14)"><span class="pre">Annotated</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Sequence" title="(in Python v3.14)"><span class="pre">collections.abc.Sequence</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.SupportsFloat" title="(in Python v3.14)"><span class="pre">SupportsFloat</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.SupportsIndex" title="(in Python v3.14)"><span class="pre">SupportsIndex</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'FixedSize(6)'</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">upper_force_thresholds</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Annotated" title="(in Python v3.14)"><span class="pre">Annotated</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Sequence" title="(in Python v3.14)"><span class="pre">collections.abc.Sequence</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.SupportsFloat" title="(in Python v3.14)"><span class="pre">SupportsFloat</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.SupportsIndex" title="(in Python v3.14)"><span class="pre">SupportsIndex</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'FixedSize(6)'</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#pylibfranka.Robot.set_collision_behavior" title="Link to this definition">#</a></dt>
+<dd><p>Configure collision detection thresholds.</p>
+<p>&#64;param lower_torque_thresholds Lower torque thresholds [Nm] (7,)
+&#64;param upper_torque_thresholds Upper torque thresholds [Nm] (7,)
+&#64;param lower_force_thresholds Lower Cartesian force thresholds [N, Nm] (6,)
+&#64;param upper_force_thresholds Upper Cartesian force thresholds [N, Nm] (6,)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pylibfranka.Robot.set_joint_impedance">
+<span class="sig-name descname"><span class="pre">set_joint_impedance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pylibfranka.Robot" title="pylibfranka._pylibfranka.Robot"><span class="pre">pylibfranka._pylibfranka.Robot</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Annotated" title="(in Python v3.14)"><span class="pre">Annotated</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Sequence" title="(in Python v3.14)"><span class="pre">collections.abc.Sequence</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.SupportsFloat" title="(in Python v3.14)"><span class="pre">SupportsFloat</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.SupportsIndex" title="(in Python v3.14)"><span class="pre">SupportsIndex</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'FixedSize(7)'</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#pylibfranka.Robot.set_joint_impedance" title="Link to this definition">#</a></dt>
+<dd><p>Set joint impedance for internal controller.</p>
+<p>&#64;param K_theta Joint stiffness values [Nm/rad] (7,)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pylibfranka.Robot.set_load">
+<span class="sig-name descname"><span class="pre">set_load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pylibfranka.Robot" title="pylibfranka._pylibfranka.Robot"><span class="pre">pylibfranka._pylibfranka.Robot</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.SupportsFloat" title="(in Python v3.14)"><span class="pre">SupportsFloat</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.SupportsIndex" title="(in Python v3.14)"><span class="pre">SupportsIndex</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Annotated" title="(in Python v3.14)"><span class="pre">Annotated</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Sequence" title="(in Python v3.14)"><span class="pre">collections.abc.Sequence</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.SupportsFloat" title="(in Python v3.14)"><span class="pre">SupportsFloat</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.SupportsIndex" title="(in Python v3.14)"><span class="pre">SupportsIndex</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'FixedSize(3)'</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg2</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Annotated" title="(in Python v3.14)"><span class="pre">Annotated</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Sequence" title="(in Python v3.14)"><span class="pre">collections.abc.Sequence</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.SupportsFloat" title="(in Python v3.14)"><span class="pre">SupportsFloat</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.SupportsIndex" title="(in Python v3.14)"><span class="pre">SupportsIndex</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'FixedSize(9)'</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#pylibfranka.Robot.set_load" title="Link to this definition">#</a></dt>
+<dd><p>Set external load parameters.</p>
+<p>&#64;param load_mass Mass of the external load [kg]
+&#64;param F_x_Cload Center of mass of load in flange frame [m] (3,)
+&#64;param load_inertia Inertia tensor of load [kg*m²] (9,) in column-major order</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pylibfranka.Robot.start_cartesian_pose_control">
+<span class="sig-name descname"><span class="pre">start_cartesian_pose_control</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pylibfranka.Robot" title="pylibfranka._pylibfranka.Robot"><span class="pre">pylibfranka._pylibfranka.Robot</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pylibfranka.ControllerMode" title="pylibfranka._pylibfranka.ControllerMode"><span class="pre">pylibfranka._pylibfranka.ControllerMode</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="control.html#pylibfranka.ActiveControlBase" title="pylibfranka._pylibfranka.ActiveControlBase"><span class="pre">pylibfranka._pylibfranka.ActiveControlBase</span></a></span></span><a class="headerlink" href="#pylibfranka.Robot.start_cartesian_pose_control" title="Link to this definition">#</a></dt>
+<dd><p>Start Cartesian pose control mode.</p>
+<p>&#64;param control_type Controller mode (JointImpedance or CartesianImpedance)
+&#64;return ActiveControlBase interface for sending Cartesian pose commands</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pylibfranka.Robot.start_cartesian_velocity_control">
+<span class="sig-name descname"><span class="pre">start_cartesian_velocity_control</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pylibfranka.Robot" title="pylibfranka._pylibfranka.Robot"><span class="pre">pylibfranka._pylibfranka.Robot</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pylibfranka.ControllerMode" title="pylibfranka._pylibfranka.ControllerMode"><span class="pre">pylibfranka._pylibfranka.ControllerMode</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="control.html#pylibfranka.ActiveControlBase" title="pylibfranka._pylibfranka.ActiveControlBase"><span class="pre">pylibfranka._pylibfranka.ActiveControlBase</span></a></span></span><a class="headerlink" href="#pylibfranka.Robot.start_cartesian_velocity_control" title="Link to this definition">#</a></dt>
+<dd><p>Start Cartesian velocity control mode.</p>
+<p>&#64;param control_type Controller mode (JointImpedance or CartesianImpedance)
+&#64;return ActiveControlBase interface for sending Cartesian velocity commands</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pylibfranka.Robot.start_joint_position_control">
+<span class="sig-name descname"><span class="pre">start_joint_position_control</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pylibfranka.Robot" title="pylibfranka._pylibfranka.Robot"><span class="pre">pylibfranka._pylibfranka.Robot</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pylibfranka.ControllerMode" title="pylibfranka._pylibfranka.ControllerMode"><span class="pre">pylibfranka._pylibfranka.ControllerMode</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="control.html#pylibfranka.ActiveControlBase" title="pylibfranka._pylibfranka.ActiveControlBase"><span class="pre">pylibfranka._pylibfranka.ActiveControlBase</span></a></span></span><a class="headerlink" href="#pylibfranka.Robot.start_joint_position_control" title="Link to this definition">#</a></dt>
+<dd><p>Start joint position control mode.</p>
+<p>&#64;param control_type Controller mode (JointImpedance or CartesianImpedance)
+&#64;return ActiveControlBase interface for sending position commands</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pylibfranka.Robot.start_joint_velocity_control">
+<span class="sig-name descname"><span class="pre">start_joint_velocity_control</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pylibfranka.Robot" title="pylibfranka._pylibfranka.Robot"><span class="pre">pylibfranka._pylibfranka.Robot</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pylibfranka.ControllerMode" title="pylibfranka._pylibfranka.ControllerMode"><span class="pre">pylibfranka._pylibfranka.ControllerMode</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="control.html#pylibfranka.ActiveControlBase" title="pylibfranka._pylibfranka.ActiveControlBase"><span class="pre">pylibfranka._pylibfranka.ActiveControlBase</span></a></span></span><a class="headerlink" href="#pylibfranka.Robot.start_joint_velocity_control" title="Link to this definition">#</a></dt>
+<dd><p>Start joint velocity control mode.</p>
+<p>&#64;param control_type Controller mode (JointImpedance or CartesianImpedance)
+&#64;return ActiveControlBase interface for sending velocity commands</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pylibfranka.Robot.start_torque_control">
+<span class="sig-name descname"><span class="pre">start_torque_control</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pylibfranka.Robot" title="pylibfranka._pylibfranka.Robot"><span class="pre">pylibfranka._pylibfranka.Robot</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="control.html#pylibfranka.ActiveControlBase" title="pylibfranka._pylibfranka.ActiveControlBase"><span class="pre">pylibfranka._pylibfranka.ActiveControlBase</span></a></span></span><a class="headerlink" href="#pylibfranka.Robot.start_torque_control" title="Link to this definition">#</a></dt>
+<dd><p>Start torque control mode.</p>
+<p>&#64;return ActiveControlBase interface for sending torque commands</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pylibfranka.Robot.stop">
+<span class="sig-name descname"><span class="pre">stop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pylibfranka.Robot" title="pylibfranka._pylibfranka.Robot"><span class="pre">pylibfranka._pylibfranka.Robot</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#pylibfranka.Robot.stop" title="Link to this definition">#</a></dt>
+<dd><p>Stop currently running motion.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="constructor">
+<h2>Constructor<a class="headerlink" href="#constructor" title="Link to this heading">#</a></h2>
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">pylibfranka.</span></span><span class="sig-name descname"><span class="pre">Robot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">robot_ip_address</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">realtime_config</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">RealtimeConfig.kEnforce</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Establishes a connection with the robot.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>robot_ip_address</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – IP address or hostname of the robot controller</p></li>
+<li><p><strong>realtime_config</strong> (<a class="reference internal" href="#pylibfranka.RealtimeConfig" title="pylibfranka.RealtimeConfig"><em>RealtimeConfig</em></a>) – Real-time scheduling requirements. Default: <code class="docutils literal notranslate"><span class="pre">RealtimeConfig.kEnforce</span></code></p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference internal" href="exceptions.html#pylibfranka.NetworkException" title="pylibfranka.NetworkException"><strong>NetworkException</strong></a> – if the connection cannot be established</p></li>
+<li><p><strong>IncompatibleVersionException</strong> – if the robot’s software version is incompatible</p></li>
+</ul>
+</dd>
+</dl>
+<p><strong>Example:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pylibfranka</span>
+
+<span class="c1"># Connect with real-time enforcement</span>
+<span class="n">robot</span> <span class="o">=</span> <span class="n">pylibfranka</span><span class="o">.</span><span class="n">Robot</span><span class="p">(</span><span class="s2">&quot;172.16.0.2&quot;</span><span class="p">)</span>
+
+<span class="c1"># Connect without real-time enforcement (for testing)</span>
+<span class="n">robot_test</span> <span class="o">=</span> <span class="n">pylibfranka</span><span class="o">.</span><span class="n">Robot</span><span class="p">(</span>
+    <span class="s2">&quot;172.16.0.2&quot;</span><span class="p">,</span>
+    <span class="n">pylibfranka</span><span class="o">.</span><span class="n">RealtimeConfig</span><span class="o">.</span><span class="n">kIgnore</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="control-methods">
+<h2>Control Methods<a class="headerlink" href="#control-methods" title="Link to this heading">#</a></h2>
+<section id="start-torque-control">
+<h3>start_torque_control<a class="headerlink" href="#start-torque-control" title="Link to this heading">#</a></h3>
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">Robot.</span></span><span class="sig-name descname"><span class="pre">start_torque_control</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><p>Starts a new torque controller.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Active control interface for sending torque commands</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="control.html#pylibfranka.ActiveControlBase" title="pylibfranka.ActiveControlBase">ActiveControlBase</a></p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><a class="reference internal" href="exceptions.html#pylibfranka.ControlException" title="pylibfranka.ControlException"><strong>ControlException</strong></a> – if an error related to torque control occurred</p></li>
+<li><p><a class="reference internal" href="exceptions.html#pylibfranka.InvalidOperationException" title="pylibfranka.InvalidOperationException"><strong>InvalidOperationException</strong></a> – if a conflicting operation is already running</p></li>
+<li><p><a class="reference internal" href="exceptions.html#pylibfranka.NetworkException" title="pylibfranka.NetworkException"><strong>NetworkException</strong></a> – if the connection is lost, e.g. after a timeout</p></li>
+</ul>
+</dd>
+</dl>
+<p><strong>Example:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">robot</span> <span class="o">=</span> <span class="n">pylibfranka</span><span class="o">.</span><span class="n">Robot</span><span class="p">(</span><span class="s2">&quot;172.16.0.2&quot;</span><span class="p">)</span>
+
+<span class="c1"># Start torque control mode (gravity is automatically compensated)</span>
+<span class="n">control</span> <span class="o">=</span> <span class="n">robot</span><span class="o">.</span><span class="n">start_torque_control</span><span class="p">()</span>
+
+<span class="c1"># Control loop at 1 kHz</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5000</span><span class="p">):</span>
+    <span class="n">state</span><span class="p">,</span> <span class="n">duration</span> <span class="o">=</span> <span class="n">control</span><span class="o">.</span><span class="n">readOnce</span><span class="p">()</span>
+
+    <span class="c1"># Send zero torque for compliant mode</span>
+    <span class="n">tau</span> <span class="o">=</span> <span class="n">pylibfranka</span><span class="o">.</span><span class="n">Torques</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+
+    <span class="c1"># Send torque command</span>
+    <span class="n">control</span><span class="o">.</span><span class="n">writeOnce</span><span class="p">(</span><span class="n">tau</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="control.html#pylibfranka.ActiveControlBase.writeOnce" title="pylibfranka.ActiveControlBase.writeOnce"><code class="xref py py-meth docutils literal notranslate"><span class="pre">ActiveControlBase.writeOnce()</span></code></a> for sending torque commands</p>
+</div>
+</dd></dl>
+
+</section>
+<section id="start-joint-position-control">
+<h3>start_joint_position_control<a class="headerlink" href="#start-joint-position-control" title="Link to this heading">#</a></h3>
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">Robot.</span></span><span class="sig-name descname"><span class="pre">start_joint_position_control</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">control_type</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Starts a new joint position motion generator.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>control_type</strong> (<a class="reference internal" href="#pylibfranka.ControllerMode" title="pylibfranka.ControllerMode"><em>ControllerMode</em></a>) – Controller mode for the operation</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Active control interface for sending position commands</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="control.html#pylibfranka.ActiveControlBase" title="pylibfranka.ActiveControlBase">ActiveControlBase</a></p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference internal" href="exceptions.html#pylibfranka.ControlException" title="pylibfranka.ControlException"><strong>ControlException</strong></a> – if an error related to motion generation occurred</p></li>
+<li><p><a class="reference internal" href="exceptions.html#pylibfranka.InvalidOperationException" title="pylibfranka.InvalidOperationException"><strong>InvalidOperationException</strong></a> – if a conflicting operation is already running</p></li>
+<li><p><a class="reference internal" href="exceptions.html#pylibfranka.NetworkException" title="pylibfranka.NetworkException"><strong>NetworkException</strong></a> – if the connection is lost, e.g. after a timeout</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="start-joint-velocity-control">
+<h3>start_joint_velocity_control<a class="headerlink" href="#start-joint-velocity-control" title="Link to this heading">#</a></h3>
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">Robot.</span></span><span class="sig-name descname"><span class="pre">start_joint_velocity_control</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">control_type</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Starts a new joint velocity motion generator.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>control_type</strong> (<a class="reference internal" href="#pylibfranka.ControllerMode" title="pylibfranka.ControllerMode"><em>ControllerMode</em></a>) – Controller mode for the operation</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Active control interface for sending velocity commands</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="control.html#pylibfranka.ActiveControlBase" title="pylibfranka.ActiveControlBase">ActiveControlBase</a></p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference internal" href="exceptions.html#pylibfranka.ControlException" title="pylibfranka.ControlException"><strong>ControlException</strong></a> – if an error related to motion generation occurred</p></li>
+<li><p><a class="reference internal" href="exceptions.html#pylibfranka.InvalidOperationException" title="pylibfranka.InvalidOperationException"><strong>InvalidOperationException</strong></a> – if a conflicting operation is already running</p></li>
+<li><p><a class="reference internal" href="exceptions.html#pylibfranka.NetworkException" title="pylibfranka.NetworkException"><strong>NetworkException</strong></a> – if the connection is lost, e.g. after a timeout</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="start-cartesian-pose-control">
+<h3>start_cartesian_pose_control<a class="headerlink" href="#start-cartesian-pose-control" title="Link to this heading">#</a></h3>
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">Robot.</span></span><span class="sig-name descname"><span class="pre">start_cartesian_pose_control</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">control_type</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Starts a new cartesian pose motion generator.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>control_type</strong> (<a class="reference internal" href="#pylibfranka.ControllerMode" title="pylibfranka.ControllerMode"><em>ControllerMode</em></a>) – Controller mode for the operation</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Active control interface for sending position commands</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="control.html#pylibfranka.ActiveControlBase" title="pylibfranka.ActiveControlBase">ActiveControlBase</a></p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference internal" href="exceptions.html#pylibfranka.ControlException" title="pylibfranka.ControlException"><strong>ControlException</strong></a> – if an error related to motion generation occurred</p></li>
+<li><p><a class="reference internal" href="exceptions.html#pylibfranka.InvalidOperationException" title="pylibfranka.InvalidOperationException"><strong>InvalidOperationException</strong></a> – if a conflicting operation is already running</p></li>
+<li><p><a class="reference internal" href="exceptions.html#pylibfranka.NetworkException" title="pylibfranka.NetworkException"><strong>NetworkException</strong></a> – if the connection is lost, e.g. after a timeout</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="start-cartesian-velocity-control">
+<h3>start_cartesian_velocity_control<a class="headerlink" href="#start-cartesian-velocity-control" title="Link to this heading">#</a></h3>
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">Robot.</span></span><span class="sig-name descname"><span class="pre">start_cartesian_velocity_control</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">control_type</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Starts a new cartesian velocity motion generator.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>control_type</strong> (<a class="reference internal" href="#pylibfranka.ControllerMode" title="pylibfranka.ControllerMode"><em>ControllerMode</em></a>) – Controller mode for the operation</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Active control interface for sending velocity commands</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="control.html#pylibfranka.ActiveControlBase" title="pylibfranka.ActiveControlBase">ActiveControlBase</a></p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference internal" href="exceptions.html#pylibfranka.ControlException" title="pylibfranka.ControlException"><strong>ControlException</strong></a> – if an error related to motion generation occurred</p></li>
+<li><p><a class="reference internal" href="exceptions.html#pylibfranka.InvalidOperationException" title="pylibfranka.InvalidOperationException"><strong>InvalidOperationException</strong></a> – if a conflicting operation is already running</p></li>
+<li><p><a class="reference internal" href="exceptions.html#pylibfranka.NetworkException" title="pylibfranka.NetworkException"><strong>NetworkException</strong></a> – if the connection is lost, e.g. after a timeout</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+</section>
+<section id="state-and-model">
+<h2>State and Model<a class="headerlink" href="#state-and-model" title="Link to this heading">#</a></h2>
+<section id="read-once">
+<h3>read_once<a class="headerlink" href="#read-once" title="Link to this heading">#</a></h3>
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">Robot.</span></span><span class="sig-name descname"><span class="pre">read_once</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><p>Read current robot state once.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Current robot state containing all state information</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="state.html#pylibfranka.RobotState" title="pylibfranka.RobotState">RobotState</a></p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="exceptions.html#pylibfranka.NetworkException" title="pylibfranka.NetworkException"><strong>NetworkException</strong></a> – if the connection is lost</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="load-model">
+<h3>load_model<a class="headerlink" href="#load-model" title="Link to this heading">#</a></h3>
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">Robot.</span></span><span class="sig-name descname"><span class="pre">load_model</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><p>Load robot dynamics model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Model object for computing dynamics quantities</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="model.html#pylibfranka.Model" title="pylibfranka.Model">Model</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+</section>
+<section id="configuration-methods">
+<h2>Configuration Methods<a class="headerlink" href="#configuration-methods" title="Link to this heading">#</a></h2>
+<section id="set-collision-behavior">
+<h3>set_collision_behavior<a class="headerlink" href="#set-collision-behavior" title="Link to this heading">#</a></h3>
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">Robot.</span></span><span class="sig-name descname"><span class="pre">set_collision_behavior</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lower_torque_thresholds</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">upper_torque_thresholds</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lower_force_thresholds</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">upper_force_thresholds</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Configure collision detection thresholds.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>lower_torque_thresholds</strong> (<em>array_like</em>) – Lower torque thresholds [Nm] for each joint (7,)</p></li>
+<li><p><strong>upper_torque_thresholds</strong> (<em>array_like</em>) – Upper torque thresholds [Nm] for each joint (7,)</p></li>
+<li><p><strong>lower_force_thresholds</strong> (<em>array_like</em>) – Lower Cartesian force thresholds [N, Nm] (6,)</p></li>
+<li><p><strong>upper_force_thresholds</strong> (<em>array_like</em>) – Upper Cartesian force thresholds [N, Nm] (6,)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference internal" href="exceptions.html#pylibfranka.CommandException" title="pylibfranka.CommandException"><strong>CommandException</strong></a> – if the Control reports an error</p></li>
+<li><p><a class="reference internal" href="exceptions.html#pylibfranka.NetworkException" title="pylibfranka.NetworkException"><strong>NetworkException</strong></a> – if the connection is lost</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="set-joint-impedance">
+<h3>set_joint_impedance<a class="headerlink" href="#set-joint-impedance" title="Link to this heading">#</a></h3>
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">Robot.</span></span><span class="sig-name descname"><span class="pre">set_joint_impedance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">K_theta</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Sets the impedance for each joint in the internal controller.</p>
+<p>User-provided torques are not affected by this setting.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>K_theta</strong> (<em>array_like</em>) – Joint impedance values <span class="math notranslate nohighlight">\(K_{\theta_{1-7}} \in [0, 14250]\)</span> [Nm/rad] (7,)</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference internal" href="exceptions.html#pylibfranka.CommandException" title="pylibfranka.CommandException"><strong>CommandException</strong></a> – if the Control reports an error</p></li>
+<li><p><a class="reference internal" href="exceptions.html#pylibfranka.NetworkException" title="pylibfranka.NetworkException"><strong>NetworkException</strong></a> – if the connection is lost</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="set-cartesian-impedance">
+<h3>set_cartesian_impedance<a class="headerlink" href="#set-cartesian-impedance" title="Link to this heading">#</a></h3>
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">Robot.</span></span><span class="sig-name descname"><span class="pre">set_cartesian_impedance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">K_x</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Sets the Cartesian impedance for the internal controller.</p>
+<p>User-provided torques are not affected by this setting.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>K_x</strong> (<em>array_like</em>) – Cartesian impedance values [N/m, Nm/rad] for (x, y, z, roll, pitch, yaw) (6,)</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference internal" href="exceptions.html#pylibfranka.CommandException" title="pylibfranka.CommandException"><strong>CommandException</strong></a> – if the Control reports an error</p></li>
+<li><p><a class="reference internal" href="exceptions.html#pylibfranka.NetworkException" title="pylibfranka.NetworkException"><strong>NetworkException</strong></a> – if the connection is lost</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="set-k">
+<h3>set_K<a class="headerlink" href="#set-k" title="Link to this heading">#</a></h3>
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">Robot.</span></span><span class="sig-name descname"><span class="pre">set_K</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">EE_T_K</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Sets the transformation <span class="math notranslate nohighlight">\(^{EE}T_K\)</span> from end effector frame to stiffness frame.</p>
+<p>The transformation matrix is represented as a vectorized 4x4 matrix in column-major format.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>EE_T_K</strong> (<em>array_like</em>) – Vectorized EE-to-K transformation matrix <span class="math notranslate nohighlight">\(^{EE}T_K\)</span>, column-major (16,)</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference internal" href="exceptions.html#pylibfranka.CommandException" title="pylibfranka.CommandException"><strong>CommandException</strong></a> – if the Control reports an error</p></li>
+<li><p><a class="reference internal" href="exceptions.html#pylibfranka.NetworkException" title="pylibfranka.NetworkException"><strong>NetworkException</strong></a> – if the connection is lost</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="set-ee">
+<h3>set_EE<a class="headerlink" href="#set-ee" title="Link to this heading">#</a></h3>
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">Robot.</span></span><span class="sig-name descname"><span class="pre">set_EE</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">NE_T_EE</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Sets the transformation <span class="math notranslate nohighlight">\(^{NE}T_{EE}\)</span> from nominal end effector to end effector frame.</p>
+<p>The transformation matrix is represented as a vectorized 4x4 matrix in column-major format.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>NE_T_EE</strong> (<em>array_like</em>) – Vectorized NE-to-EE transformation matrix <span class="math notranslate nohighlight">\(^{NE}T_{EE}\)</span>, column-major (16,)</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference internal" href="exceptions.html#pylibfranka.CommandException" title="pylibfranka.CommandException"><strong>CommandException</strong></a> – if the Control reports an error</p></li>
+<li><p><a class="reference internal" href="exceptions.html#pylibfranka.NetworkException" title="pylibfranka.NetworkException"><strong>NetworkException</strong></a> – if the connection is lost</p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="state.html#pylibfranka.RobotState.NE_T_EE" title="pylibfranka.RobotState.NE_T_EE"><code class="xref py py-attr docutils literal notranslate"><span class="pre">RobotState.NE_T_EE</span></code></a> for end effector pose in nominal end effector frame</p></li>
+<li><p><a class="reference internal" href="state.html#pylibfranka.RobotState.O_T_EE" title="pylibfranka.RobotState.O_T_EE"><code class="xref py py-attr docutils literal notranslate"><span class="pre">RobotState.O_T_EE</span></code></a> for end effector pose in world base frame</p></li>
+<li><p><a class="reference internal" href="state.html#pylibfranka.RobotState.F_T_EE" title="pylibfranka.RobotState.F_T_EE"><code class="xref py py-attr docutils literal notranslate"><span class="pre">RobotState.F_T_EE</span></code></a> for end effector pose in flange frame</p></li>
+</ul>
+</div>
+</dd></dl>
+
+</section>
+<section id="set-load">
+<h3>set_load<a class="headerlink" href="#set-load" title="Link to this heading">#</a></h3>
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">Robot.</span></span><span class="sig-name descname"><span class="pre">set_load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">load_mass</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">F_x_Cload</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">load_inertia</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Sets dynamic parameters of a payload.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is not for setting end effector parameters, which have to be set in the administrator’s interface.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>load_mass</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><em>float</em></a>) – Mass of the load [kg]</p></li>
+<li><p><strong>F_x_Cload</strong> (<em>array_like</em>) – Translation from flange to center of mass of load <span class="math notranslate nohighlight">\(^Fx_{C_{load}}\)</span> [m] (3,)</p></li>
+<li><p><strong>load_inertia</strong> (<em>array_like</em>) – Inertia matrix <span class="math notranslate nohighlight">\(I_{load}\)</span> [kg·m²], column-major (9,)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference internal" href="exceptions.html#pylibfranka.CommandException" title="pylibfranka.CommandException"><strong>CommandException</strong></a> – if the Control reports an error</p></li>
+<li><p><a class="reference internal" href="exceptions.html#pylibfranka.NetworkException" title="pylibfranka.NetworkException"><strong>NetworkException</strong></a> – if the connection is lost</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+</section>
+<section id="error-handling">
+<h2>Error Handling<a class="headerlink" href="#error-handling" title="Link to this heading">#</a></h2>
+<section id="automatic-error-recovery">
+<h3>automatic_error_recovery<a class="headerlink" href="#automatic-error-recovery" title="Link to this heading">#</a></h3>
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">Robot.</span></span><span class="sig-name descname"><span class="pre">automatic_error_recovery</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><p>Attempt automatic error recovery.</p>
+<p>Executes automatic error recovery if the robot is in an error state. This can clear recoverable errors.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><a class="reference internal" href="exceptions.html#pylibfranka.CommandException" title="pylibfranka.CommandException"><strong>CommandException</strong></a> – if recovery fails</p></li>
+<li><p><a class="reference internal" href="exceptions.html#pylibfranka.NetworkException" title="pylibfranka.NetworkException"><strong>NetworkException</strong></a> – if the connection is lost</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="stop">
+<h3>stop<a class="headerlink" href="#stop" title="Link to this heading">#</a></h3>
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">Robot.</span></span><span class="sig-name descname"><span class="pre">stop</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><p>Stops all currently running motions.</p>
+<p>If a control or motion generator loop is running in another thread, it will be preempted with a <a class="reference internal" href="exceptions.html#pylibfranka.ControlException" title="pylibfranka.ControlException"><code class="xref py py-class docutils literal notranslate"><span class="pre">ControlException</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><a class="reference internal" href="exceptions.html#pylibfranka.CommandException" title="pylibfranka.CommandException"><strong>CommandException</strong></a> – if the Control reports an error</p></li>
+<li><p><a class="reference internal" href="exceptions.html#pylibfranka.NetworkException" title="pylibfranka.NetworkException"><strong>NetworkException</strong></a> – if the connection is lost</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+</section>
+<section id="related-classes">
+<h2>Related Classes<a class="headerlink" href="#related-classes" title="Link to this heading">#</a></h2>
+<section id="realtimeconfig">
+<h3>RealtimeConfig<a class="headerlink" href="#realtimeconfig" title="Link to this heading">#</a></h3>
+<dl class="py class">
+<dt class="sig sig-object py" id="pylibfranka.RealtimeConfig">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pylibfranka.</span></span><span class="sig-name descname"><span class="pre">RealtimeConfig</span></span><a class="headerlink" href="#pylibfranka.RealtimeConfig" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pybind11_object</span></code></p>
+<blockquote>
+<div><p>Real-time configuration options.</p>
+</div></blockquote>
+<p>Members:</p>
+<blockquote>
+<div><p>kEnforce : Enforce real-time requirements</p>
+<p>kIgnore : Ignore real-time requirements</p>
+</div></blockquote>
+<p>Enumeration for real-time configuration options.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Variables<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>kEnforce</strong> – Enforce real-time requirements (recommended for actual control)</p></li>
+<li><p><strong>kIgnore</strong> – Ignore real-time requirements (useful for testing/development)</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pylibfranka.RealtimeConfig.kEnforce">
+<span class="sig-name descname"><span class="pre">kEnforce</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;RealtimeConfig.kEnforce:</span> <span class="pre">0&gt;</span></em><a class="headerlink" href="#pylibfranka.RealtimeConfig.kEnforce" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pylibfranka.RealtimeConfig.kIgnore">
+<span class="sig-name descname"><span class="pre">kIgnore</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;RealtimeConfig.kIgnore:</span> <span class="pre">1&gt;</span></em><a class="headerlink" href="#pylibfranka.RealtimeConfig.kIgnore" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pylibfranka.RealtimeConfig.name">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#pylibfranka.RealtimeConfig.name" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pylibfranka.RealtimeConfig.value">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">value</span></span><a class="headerlink" href="#pylibfranka.RealtimeConfig.value" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="controllermode">
+<h3>ControllerMode<a class="headerlink" href="#controllermode" title="Link to this heading">#</a></h3>
+<dl class="py class">
+<dt class="sig sig-object py" id="pylibfranka.ControllerMode">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pylibfranka.</span></span><span class="sig-name descname"><span class="pre">ControllerMode</span></span><a class="headerlink" href="#pylibfranka.ControllerMode" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pybind11_object</span></code></p>
+<blockquote>
+<div><p>Controller mode for motion control.</p>
+</div></blockquote>
+<p>Members:</p>
+<blockquote>
+<div><p>JointImpedance : Joint impedance control mode</p>
+<p>CartesianImpedance : Cartesian impedance control mode</p>
+</div></blockquote>
+<p>Enumeration for controller mode selection.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Variables<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>JointImpedance</strong> – Joint impedance control mode</p></li>
+<li><p><strong>CartesianImpedance</strong> – Cartesian impedance control mode</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pylibfranka.ControllerMode.CartesianImpedance">
+<span class="sig-name descname"><span class="pre">CartesianImpedance</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;ControllerMode.CartesianImpedance:</span> <span class="pre">1&gt;</span></em><a class="headerlink" href="#pylibfranka.ControllerMode.CartesianImpedance" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pylibfranka.ControllerMode.JointImpedance">
+<span class="sig-name descname"><span class="pre">JointImpedance</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;ControllerMode.JointImpedance:</span> <span class="pre">0&gt;</span></em><a class="headerlink" href="#pylibfranka.ControllerMode.JointImpedance" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pylibfranka.ControllerMode.name">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#pylibfranka.ControllerMode.name" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pylibfranka.ControllerMode.value">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">value</span></span><a class="headerlink" href="#pylibfranka.ControllerMode.value" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+<section id="see-also">
+<h2>See Also<a class="headerlink" href="#see-also" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="control.html#pylibfranka.ActiveControlBase" title="pylibfranka.ActiveControlBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">ActiveControlBase</span></code></a> – Control interface returned by start_* methods</p></li>
+<li><p><a class="reference internal" href="state.html#pylibfranka.RobotState" title="pylibfranka.RobotState"><code class="xref py py-class docutils literal notranslate"><span class="pre">RobotState</span></code></a> – Robot state data structure</p></li>
+<li><p><a class="reference internal" href="model.html#pylibfranka.Model" title="pylibfranka.Model"><code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></a> – Dynamics model for computing kinematics and dynamics</p></li>
+<li><p><a class="reference internal" href="state.html#pylibfranka.Errors" title="pylibfranka.Errors"><code class="xref py py-class docutils literal notranslate"><span class="pre">Errors</span></code></a> – Robot error state information</p></li>
+</ul>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../modules.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Module Reference</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="control.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Control Interface</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#class-definition">Class Definition</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pylibfranka.Robot"><code class="docutils literal notranslate"><span class="pre">Robot</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pylibfranka.Robot.automatic_error_recovery"><code class="docutils literal notranslate"><span class="pre">Robot.automatic_error_recovery()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pylibfranka.Robot.load_model"><code class="docutils literal notranslate"><span class="pre">Robot.load_model()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pylibfranka.Robot.read_once"><code class="docutils literal notranslate"><span class="pre">Robot.read_once()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pylibfranka.Robot.set_EE"><code class="docutils literal notranslate"><span class="pre">Robot.set_EE()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pylibfranka.Robot.set_K"><code class="docutils literal notranslate"><span class="pre">Robot.set_K()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pylibfranka.Robot.set_cartesian_impedance"><code class="docutils literal notranslate"><span class="pre">Robot.set_cartesian_impedance()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pylibfranka.Robot.set_collision_behavior"><code class="docutils literal notranslate"><span class="pre">Robot.set_collision_behavior()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pylibfranka.Robot.set_joint_impedance"><code class="docutils literal notranslate"><span class="pre">Robot.set_joint_impedance()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pylibfranka.Robot.set_load"><code class="docutils literal notranslate"><span class="pre">Robot.set_load()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pylibfranka.Robot.start_cartesian_pose_control"><code class="docutils literal notranslate"><span class="pre">Robot.start_cartesian_pose_control()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pylibfranka.Robot.start_cartesian_velocity_control"><code class="docutils literal notranslate"><span class="pre">Robot.start_cartesian_velocity_control()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pylibfranka.Robot.start_joint_position_control"><code class="docutils literal notranslate"><span class="pre">Robot.start_joint_position_control()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pylibfranka.Robot.start_joint_velocity_control"><code class="docutils literal notranslate"><span class="pre">Robot.start_joint_velocity_control()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pylibfranka.Robot.start_torque_control"><code class="docutils literal notranslate"><span class="pre">Robot.start_torque_control()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pylibfranka.Robot.stop"><code class="docutils literal notranslate"><span class="pre">Robot.stop()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#constructor">Constructor</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#control-methods">Control Methods</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#start-torque-control">start_torque_control</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#start-joint-position-control">start_joint_position_control</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#start-joint-velocity-control">start_joint_velocity_control</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#start-cartesian-pose-control">start_cartesian_pose_control</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#start-cartesian-velocity-control">start_cartesian_velocity_control</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#state-and-model">State and Model</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#read-once">read_once</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#load-model">load_model</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configuration-methods">Configuration Methods</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#set-collision-behavior">set_collision_behavior</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#set-joint-impedance">set_joint_impedance</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#set-cartesian-impedance">set_cartesian_impedance</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#set-k">set_K</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#set-ee">set_EE</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#set-load">set_load</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#error-handling">Error Handling</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#automatic-error-recovery">automatic_error_recovery</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stop">stop</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#related-classes">Related Classes</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#realtimeconfig">RealtimeConfig</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pylibfranka.RealtimeConfig"><code class="docutils literal notranslate"><span class="pre">RealtimeConfig</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#pylibfranka.RealtimeConfig.kEnforce"><code class="docutils literal notranslate"><span class="pre">RealtimeConfig.kEnforce</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#pylibfranka.RealtimeConfig.kIgnore"><code class="docutils literal notranslate"><span class="pre">RealtimeConfig.kIgnore</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#pylibfranka.RealtimeConfig.name"><code class="docutils literal notranslate"><span class="pre">RealtimeConfig.name</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#pylibfranka.RealtimeConfig.value"><code class="docutils literal notranslate"><span class="pre">RealtimeConfig.value</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#controllermode">ControllerMode</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pylibfranka.ControllerMode"><code class="docutils literal notranslate"><span class="pre">ControllerMode</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#pylibfranka.ControllerMode.CartesianImpedance"><code class="docutils literal notranslate"><span class="pre">ControllerMode.CartesianImpedance</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#pylibfranka.ControllerMode.JointImpedance"><code class="docutils literal notranslate"><span class="pre">ControllerMode.JointImpedance</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#pylibfranka.ControllerMode.name"><code class="docutils literal notranslate"><span class="pre">ControllerMode.name</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#pylibfranka.ControllerMode.value"><code class="docutils literal notranslate"><span class="pre">ControllerMode.value</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#see-also">See Also</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=0790524f97105ba85085"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=0790524f97105ba85085"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2025, Franka Robotics GmbH.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.18.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
